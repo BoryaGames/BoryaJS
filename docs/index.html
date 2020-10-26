@@ -24,7 +24,7 @@ border-radius: 5px;
 var docs = [{
 type: "constructor",
 display: "BoryaJS",
-description: "Конструктор главной части библиотеки.",
+description: "РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РіР»Р°РІРЅРѕР№ С‡Р°СЃС‚Рё Р±РёР±Р»РёРѕС‚РµРєРё.",
 returns: "Object",
 example: "<font color='red'>var</font> <font color='blue'>bjs</font> = <font color='red'>new</font> <font color='blue'>BoryaJS</font>();",
 methods: [{
@@ -37,28 +37,28 @@ id: 3
 },{
 type: "method",
 display: "canvasManager",
-description: "Этот метод вернёт менеджер, который поможет с HTML тегом canvas.",
+description: "Р­С‚РѕС‚ РјРµС‚РѕРґ РІРµСЂРЅС‘С‚ РјРµРЅРµРґР¶РµСЂ, РєРѕС‚РѕСЂС‹Р№ РїРѕРјРѕР¶РµС‚ СЃ HTML С‚РµРіРѕРј canvas.",
 returns: "Object",
 example: "<font color='red'>var</font> <font color='blue'>cm</font> = <font color='blue'>bjs</font>.<font color='red'>canvasManager</font>();",
 methods: []
 },{
 type: "method",
 display: "get",
-description: "Получение DOM объекта по селектору.",
+description: "РџРѕР»СѓС‡РµРЅРёРµ DOM РѕР±СЉРµРєС‚Р° РїРѕ СЃРµР»РµРєС‚РѕСЂСѓ.",
 returns: "Object?Undefined",
 example: "<font color='red'>var</font> <font color='blue'>my_canvas</font> = <font color='blue'>bjs</font>.<font color='red'>get</font>(<font color='lime'>\"#my_canvas\"</font>);",
 methods: []
 },{
 type: "method",
 display: "coords",
-description: "Создаёт объект координат.",
+description: "РЎРѕР·РґР°С‘С‚ РѕР±СЉРµРєС‚ РєРѕРѕСЂРґРёРЅР°С‚.",
 returns: "Object",
 example: "<font color='red'>var</font> <font color='blue'>c1</font> = <font color='red'>bjs</font>.<font color='blue'>coords</font>(<font color='red'>50</font>,<font color='red'>50</font>);",
 methods: []
 },{
 type: "constructor",
 display: "Coordinates",
-description: "Тоже самое что и <span class='method list' onclick='load(3);'>coords</span>",
+description: "РўРѕР¶Рµ СЃР°РјРѕРµ С‡С‚Рѕ Рё <span class='method list' onclick='load(3);'>coords</span>",
 returns: "Object",
 example: "<font color='red'>var</font> <font color='blue'>c1</font> = <font color='red'>new</font> <font color='blue'>Coordinates</font>(<font color='red'>50</font>,<font color='red'>50</font>);",
 methods: []
@@ -76,20 +76,20 @@ document.querySelector('#lists').innerHTML += "<div class='list' onclick='load("
 window.addEventListener('load',start);
 function load(id) {
 var doc = docs[id];
-var methodsHTML = "нету";
+var methodsHTML = "РЅРµС‚Сѓ";
 if (doc.methods.length > 0) {
 methodsHTML = "";
 for (var method of doc.methods) {
 methodsHTML += "<span class='method list' onclick='load(" + method.id + ");'>" + docs[method.id].display + "</span><br/>";
 }
 }
-document.querySelector('#lists').innerHTML = "<h3 id='title'>" + doc.display + "</h3><br/><div id='description'>" + doc.description + "</div><br/><p id='returns'>Возвращает: " + doc.returns + "</p><br/><br/>Пример:<br/><div id='example' class='code'>" + doc.example + "</div><br/><br/>Методы:<br/><div>" + methodsHTML + "</div>";
+document.querySelector('#lists').innerHTML = "<h3 id='title'>" + doc.display + "</h3><br/><div id='description'>" + doc.description + "</div><br/><p id='returns'>Р’РѕР·РІСЂР°С‰Р°РµС‚: " + doc.returns + "</p><br/><br/>РџСЂРёРјРµСЂ:<br/><div id='example' class='code'>" + doc.example + "</div><br/><br/>РњРµС‚РѕРґС‹:<br/><div>" + methodsHTML + "</div>";
 }
 </script>
 </head>
 <body>
 <center>
-Загрузка...
+Р—Р°РіСЂСѓР·РєР°...
 </center>
 </body>
 </html>
