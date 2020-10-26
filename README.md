@@ -1,2 +1,2 @@
 # BoryaJS
-JavaScript library.
+JavaScript библиотека.
