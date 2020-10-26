@@ -1,0 +1,2 @@
+# BoryaJS
+JavaScript library.
