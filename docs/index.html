@@ -1,0 +1,95 @@
+<html>
+<head>
+<style>
+* {
+user-select: none;
+}
+body {
+background-color: #5b7db3;
+color: white;
+}
+.list {
+color: white;
+}
+.list:hover {
+color: blue;
+}
+.code {
+background-color: #242424;
+color: white;
+border-radius: 5px;
+}
+</style>
+<script>
+var docs = [{
+type: "constructor",
+display: "BoryaJS",
+description: "Конструктор главной части библиотеки.",
+returns: "Object",
+example: "<font color='red'>var</font> <font color='blue'>bjs</font> = <font color='red'>new</font> <font color='blue'>BoryaJS</font>();",
+methods: [{
+id: 1
+},{
+id: 2
+},{
+id: 3
+}]
+},{
+type: "method",
+display: "canvasManager",
+description: "Этот метод вернёт менеджер, который поможет с HTML тегом canvas.",
+returns: "Object",
+example: "<font color='red'>var</font> <font color='blue'>cm</font> = <font color='blue'>bjs</font>.<font color='red'>canvasManager</font>();",
+methods: []
+},{
+type: "method",
+display: "get",
+description: "Получение DOM объекта по селектору.",
+returns: "Object?Undefined",
+example: "<font color='red'>var</font> <font color='blue'>my_canvas</font> = <font color='blue'>bjs</font>.<font color='red'>get</font>(<font color='lime'>\"#my_canvas\"</font>);",
+methods: []
+},{
+type: "method",
+display: "coords",
+description: "Создаёт объект координат.",
+returns: "Object",
+example: "<font color='red'>var</font> <font color='blue'>c1</font> = <font color='red'>bjs</font>.<font color='blue'>coords</font>(<font color='red'>50</font>,<font color='red'>50</font>);",
+methods: []
+},{
+type: "constructor",
+display: "Coordinates",
+description: "Тоже самое что и <span class='method list' onclick='load(3);'>coords</span>",
+returns: "Object",
+example: "<font color='red'>var</font> <font color='blue'>c1</font> = <font color='red'>new</font> <font color='blue'>Coordinates</font>(<font color='red'>50</font>,<font color='red'>50</font>);",
+methods: []
+}];
+function start() {
+document.body.innerHTML = "<center><div id='lists'></div></center>";
+for (var id in docs) {
+var doc = docs[id];
+if (doc.type == "method") {
+continue;
+}
+document.querySelector('#lists').innerHTML += "<div class='list' onclick='load(" + id + ")'>" + doc.display + "</div><br/>";
+}
+}
+window.addEventListener('load',start);
+function load(id) {
+var doc = docs[id];
+var methodsHTML = "нету";
+if (doc.methods.length > 0) {
+methodsHTML = "";
+for (var method of doc.methods) {
+methodsHTML += "<span class='method list' onclick='load(" + method.id + ");'>" + docs[method.id].display + "</span><br/>";
+}
+}
+document.querySelector('#lists').innerHTML = "<h3 id='title'>" + doc.display + "</h3><br/><div id='description'>" + doc.description + "</div><br/><p id='returns'>Возвращает: " + doc.returns + "</p><br/><br/>Пример:<br/><div id='example' class='code'>" + doc.example + "</div><br/><br/>Методы:<br/><div>" + methodsHTML + "</div>";
+}
+</script>
+</head>
+<body>
+<center>
+Загрузка...
+</center>
+</body>
+</html>
